@@ -2,12 +2,12 @@
 import sys, os, time
 
 def main():
-
 	runscript("bitcoin")
 	runscript("bitcoincash")
 	runscript("ethereum")
 	runscript("monero")
 	runscript("litecoin")
+	runscript("zcash")
 	
 	header()
 	generate("bitcoin")
@@ -15,6 +15,7 @@ def main():
 	generate("ethereum")
 	generate("monero")
 	generate("litecoin")
+	generate("zcash")
 	footer()
 	
 	
@@ -28,6 +29,7 @@ def header():
 	g = open("report.html", "w+")
 	g.write("<html>\n<head>\n")
 	g.write("\t<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n")
+	g.write("\t<link rel=\"shortcut icon\" type=\"image/png\" href=\"img/quacc_2.png\"/>\n")
 	g.write("</head>\n<body>\n")
 	g.close()
 	
