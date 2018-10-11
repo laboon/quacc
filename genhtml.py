@@ -2,19 +2,19 @@
 import sys, os, time
 
 def main():
-	runscript("bitcoin")
-	runscript("bitcoincash")
-	runscript("ethereum")
-	runscript("monero")
-	runscript("litecoin")
+	#runscript("bitcoin")
+	#runscript("bitcoincash")
+	#runscript("ethereum")
+	#runscript("monero")
+	#runscript("litecoin")
 	runscript("zcash")
 	
 	header()
-	generate("bitcoin")
-	generate("bitcoincash")
-	generate("ethereum")
-	generate("monero")
-	generate("litecoin")
+	#generate("bitcoin")
+	#generate("bitcoincash")
+	#generate("ethereum")
+	#generate("monero")
+	#generate("litecoin")
 	generate("zcash")
 	footer()
 	

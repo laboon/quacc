@@ -37,13 +37,14 @@ RUN apt-get update && apt-get install -y \
     ncurses-dev \
     pkg-config \
     python-zmq \
+    python \
     python3 \
     python-pip \
     git \
     software-properties-common \
     unzip \
     wget \
-    zlib1g-dev \
+    zlib1g-dev
 RUN add-apt-repository ppa:george-edison55/cmake-3.x && apt-get update && apt-get -y upgrade
 RUN pip install lizard
 CMD cd /app && chmod +x */*.sh && chmod 755 lizardtrim.py && python genhtml.py
