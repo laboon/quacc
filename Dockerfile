@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     doxygen \
     graphviz \
     g++-multilib \
+    graphviz \
     libboost-all-dev \
     libboost-chrono-dev \
     libboost-filesystem-dev \
@@ -45,6 +46,11 @@ RUN apt-get update && apt-get install -y \
     unzip \
     wget \
     zlib1g-dev
+    pkg-config \
+    python3 \
+    python-pip \
+    git \
+    software-properties-common
 RUN add-apt-repository ppa:george-edison55/cmake-3.x && apt-get update && apt-get -y upgrade
 RUN pip install lizard
 CMD cd /app && chmod +x */*.sh && chmod 755 lizardtrim.py && python genhtml.py
