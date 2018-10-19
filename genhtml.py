@@ -3,28 +3,28 @@ import sys, os, time
 
 def main():
 
-	header()
-	#generate("bitcoin")
-	#generate("bitcoincash")
-	#generate("ethereum")
-	#generate("monero")
-	#generate("litecoin")
-
-	runscript("bitcoin")
-        runscript("zcash")
 
 	# runscript("bitcoincash")
 	# runscript("ethereum")
 	# runscript("monero")
 	# runscript("litecoin")
 
+        runscript("bitcoin")
+	runscript("bitcoincash")
+	runscript("dash")
+	#runscript("ethereum")
+	runscript("monero")
+	runscript("litecoin")
+        runscript("zcash")
+
 	header()
 	generate("bitcoin")
-        generate("zcash")
-	# generate("bitcoincash")
-	# generate("ethereum")
-	# generate("monero")
-	# generate("litecoin")
+        generate("bitcoincash")
+	generate("dash")
+	#generate("ethereum")
+	generate("monero")
+	generate("litecoin")
+        runscript("zcash")
 	footer()
 
 
@@ -44,7 +44,6 @@ def header():
 
 def footer():
 	g = open("report.html", "a")
-	g.write("<br><br><br>Interested in reading a near-future techno-thriller in a world where cryptocurrency has eliminated traditional money?<br>Check out <a href=\"https://smile.amazon.com/Strength-Numbers-Cryptocurrency-Bill-Laboon-ebook/dp/B07B75SL2C/\">Strength in Numbers:A Novel of Cryptocurrency by Bill Laboon</a>")
 	g.write("<br><p>Last Updated: " + time.strftime("%x") + "</p>\n")
 	g.write("<script>\nvar acc = document.getElementsByClassName(\"accordion\");\nvar i;\nfor (i = 0; i < acc.length; i++) {\n\tacc[i].addEventListener(\"click\", function() {\n\t\tthis.classList.toggle(\"active\");\n\t\tvar panel = this.nextElementSibling;\n\t\tif (panel.style.display === \"block\") {\n\t\t\tpanel.style.display = \"none\";\n\t\t} else {\n\t\t\tpanel.style.display = \"block\";\n\t\t}\n\t});\n}\n</script>\n")
 	g.write("</body>\n</html>\n")
