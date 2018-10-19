@@ -3,7 +3,6 @@ import sys, os, time
 
 def main():
 
-
 	# runscript("bitcoincash")
 	# runscript("ethereum")
 	# runscript("monero")
@@ -26,7 +25,6 @@ def main():
 	generate("litecoin")
         runscript("zcash")
 	footer()
-
 
 def runscript(dirname):
 	print("Running " + dirname.title() + " Scripts")
