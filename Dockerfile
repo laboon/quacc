@@ -45,7 +45,7 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     unzip \
     wget \
-    zlib1g-dev
+    zlib1g-dev \
     pkg-config \
     python3 \
     python-pip \
