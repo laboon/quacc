@@ -6,17 +6,17 @@ def main():
 	runscript("bitcoin")
 	runscript("dash")
 	runscript("bitcoincash")
-	runscript("ethereum")
-	runscript("monero")
-	runscript("litecoin")
+	#runscript("ethereum")
+	#runscript("monero")
+	#runscript("litecoin")
 	
 	header()
 	generate("bitcoin")
 	generate("dash")
 	generate("bitcoincash")
-	generate("ethereum")
-	generate("monero")
-	generate("litecoin")
+	#generate("ethereum")
+	#generate("monero")
+	#generate("litecoin")
 	footer()
 	
 	
