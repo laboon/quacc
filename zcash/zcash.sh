@@ -47,14 +47,15 @@ fi
 echo "Performing configuration"
 
 # Perform required configuration before building and direct the output to null
-./zcutil/build.sh > /dev/null 2>&1
+./zcutil/build.sh --enable-lcov > /dev/null 2>&1
 #./autogen.sh -q > /dev/null 2>&1
 
 # More configuration required before making
 # The disable wallet option indicates we do not want to make the code for a hardware wallet
 # The without gui option indicates we do not want to build the gui, just a headless implementation
 # The enable lcov option will generate the .gcno files necessary for lcov code coverage tests
-./configure -q --enable-lcov --disable-wallet --without-gui > /dev/null 2>&1
+#./configure -q --enable-lcov --disable-wallet --without-gui > /dev/null 2>&1
+./configure -q --disable-wallet --without-gui > /dev/null 2>&1
 
 echo "Making..."
 
@@ -109,9 +110,9 @@ lcov --zerocounts --directory . > /dev/null 2>&1
 # The two lines below copy the .gcno and .gcda files from the src/test/ directory to the current directory, '/src/test/data'
 
 #To my knowledge, these files are not created, but these comments will stay for the time being.
-#cp ../*.gcno .
+cp ../*.gcno .
 
-#cp ../*.gcda .
+cp ../*.gcda .
 
 echo "Generating test logs"
 
