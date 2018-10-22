@@ -3,30 +3,25 @@ import sys, os, time
 
 def main():
 
-	# runscript("bitcoincash")
-	# runscript("ethereum")
-	# runscript("monero")
-	# runscript("litecoin")
-
- #    runscript("bitcoin")
-	# runscript("bitcoincash")
-	# runscript("dash")
+    runscript("bitcoin")
+	runscript("bitcoincash")
+	runscript("dash")
+	runscript("ethereum")
+	runscript("monero")
+	runscript("litecoin")
 	runscript("qtum")
-	#runscript("ethereum")
-	# runscript("monero")
-	# runscript("litecoin")
- #    runscript("zcash")
+    runscript("zcash")
  	
 
 	header()
-	# generate("bitcoin")
- #    generate("bitcoincash")
-	# generate("dash")
+	generate("bitcoin")
+    generate("bitcoincash")
+	generate("dash")
+	generate("ethereum")
+	generate("monero")
+	generate("litecoin")
 	generate("qtum")
-	#generate("ethereum")
-	# generate("monero")
-	# generate("litecoin")
- #    runscript("zcash")
+    runscript("zcash")
 	footer()
 
 def runscript(dirname):
