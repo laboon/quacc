@@ -45,6 +45,7 @@ libboost-test-dev \
 libboost-thread-dev \
 libcurl4-openssl-dev \
 libc6-dev \
+libdb++-dev \
 libevent-dev \
 libgtest-dev \
 libleveldb-dev \
