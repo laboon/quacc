@@ -44,9 +44,10 @@ if ! which lcov >/dev/null; then
 	exit
 fi
 
-echo "Performing configuration"
+echo "Performing configuration and making..."
 
 # Perform required configuration before building and direct the output to null
+# After the configuration, build.sh will make and output to null
 ./zcutil/build.sh --enable-lcov > /dev/null 2>&1
 #./autogen.sh -q > /dev/null 2>&1
 
@@ -55,12 +56,6 @@ echo "Performing configuration"
 # The without gui option indicates we do not want to build the gui, just a headless implementation
 # The enable lcov option will generate the .gcno files necessary for lcov code coverage tests
 #./configure -q --enable-lcov --disable-wallet --without-gui > /dev/null 2>&1
-./configure -q --disable-wallet --without-gui > /dev/null 2>&1
-
-echo "Making..."
-
-# actualy make the node, direct the output to null
-make > /dev/null 2>&1
 
 # Run cppcheck on the node
 	# the -j option indicates how many threads we would like to use to do the checking (The more the merrier right?)
@@ -109,7 +104,6 @@ lcov --zerocounts --directory . > /dev/null 2>&1
 
 # The two lines below copy the .gcno and .gcda files from the src/test/ directory to the current directory, '/src/test/data'
 
-#To my knowledge, these files are not created, but these comments will stay for the time being.
 cp ../*.gcno .
 
 cp ../*.gcda .
