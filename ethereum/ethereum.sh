@@ -77,7 +77,7 @@ cppcheck -j 750 -q --force --enable=warning cpp-ethereum 2> ethereumcppcheck.txt
 echo "Running lizard on built code"
 lizard cpp-ethereum 1>ethereumlizard.txt
 
-../trimlizard.py ethereumlizard.txt
+../lizardtrim.py ethereumlizard.txt
 
 # Run coverage test
 echo "Running test suite"
