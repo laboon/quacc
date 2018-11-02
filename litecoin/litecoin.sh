@@ -57,7 +57,7 @@ echo "Performing configuration"
 # The --disable-wallet option indicates we do not want to make the code for a hardware wallet
 # The (excluded) --without-gui option indicates we do not want to build the gui, just a headless/cli implimentation
 # The --enable-lcov option will generate the .gcno files necessary for lcov code coverage tests
-./configure -q --enable-lcov --disable-wallet > /dev/null 2>&1
+./configure -q --enable-lcov --disable-wallet --without-gui > /dev/null 2>&1
 
 echo "Making..."
 
