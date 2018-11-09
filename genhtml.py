@@ -8,8 +8,8 @@ def main():
 	#runscript("dash")
 	#runscript("ethereum")
 	#runscript("monero")
-	runscript("litecoin")
-	#runscript("qtum")
+	#runscript("litecoin")
+	runscript("qtum")
 	#runscript("zcash")
  	
 
@@ -19,8 +19,8 @@ def main():
 	#generate("dash")
 	#generate("ethereum")
 	#generate("monero")
-	generate("litecoin")
-	#generate("qtum")
+	#generate("litecoin")
+	generate("qtum")
 	#generate("zcash")
 	footer()
 

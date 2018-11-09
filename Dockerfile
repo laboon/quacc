@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     libleveldb-dev \
     libminiupnpc-dev \
     libreadline-dev \
+    libsoduim-dev \
     libssl-dev \
     libtool \
     libunbound-dev \

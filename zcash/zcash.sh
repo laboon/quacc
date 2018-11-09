@@ -46,6 +46,10 @@ fi
 
 echo "Performing configuration and making..."
 
+rm zcutil/build.sh
+cd ..
+cp build.sh zcash/zcutil
+cd zcash
 # Perform required configuration before building and direct the output to null
 # After the configuration, build.sh will make and output to null
 ./zcutil/build.sh --enable-lcov > /dev/null 2>&1

@@ -54,7 +54,7 @@ echo "Performing configuration"
 # The without gui option indicates we do not want to build the gui, just a headless implementation
 # The enable lcov option will generate the .gcno files necessary for lcov code coverage tests
 export BDB_PREFIX='/db4'
-./configure -q BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --enable-lcov --with-incompatible-bdb --without-gui > /dev/null 2>&1
+./configure -q BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --disable-wallet --enable-lcov --with-incompatible-bdb --without-gui > /dev/null 2>&1
 
 echo "Making..."
 
