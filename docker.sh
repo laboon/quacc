@@ -2,7 +2,7 @@ docker rm quacc
 docker build -t quacc .
 docker run --name quacc quacc
 ID=$(docker ps -aqf "name=quacc")
-docker cp -r $ID:/app/report.html .
+docker cp $ID:/app/report.html .
 docker cp -r $ID:/app/bitcoin/lcov/ bitcoin/
 docker cp -r $ID:/app/bitcoincash/lcov/ bitcoincash/
 docker cp -r $ID:/app/dash/lcov/ dash/
