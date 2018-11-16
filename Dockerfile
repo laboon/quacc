@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 COPY . /app
 RUN apt-get update && apt-get install -y \
     cppcheck \
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     libleveldb-dev \
     libminiupnpc-dev \
     libreadline-dev \
-    libsoduim-dev \
+    libsodium-dev \
     libssl-dev \
     libtool \
     libunbound-dev \
