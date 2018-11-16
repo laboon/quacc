@@ -48,9 +48,9 @@ echo "Pulling docker image"
 # Pull or update docker image as needed
 sudo docker pull nanocurrency/nano
 
-echo "Making..."
+echo "Performing configurations..."
 
-# Configurations and making node are performed in a single line
+# Configurations...
 	# "-d" Starts the docker container as a daemon
 	# "-p 7075:7075/udp" Maps the network activity port
 	# "-p 7075:7075" Maps the bootstrapping TCP port
@@ -58,6 +58,10 @@ echo "Making..."
 	# "~/:root" Maps the host's home directory to the guest /root directory
 	# "nanocurrency/nano" Specifies the container to execute
 sudo docker run -d -p 7075:7075/udp -p 7075:7075 -p [::1]:7076:7076 -v ~:/root nanocurrency/nano
+
+echo "Making..."
+
+./docker/node/build.sh
 
 # Run lizard again on the compiled code and output the results to 'nanolizard.txt'
 # Is this the correct directory???
