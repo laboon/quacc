@@ -6,10 +6,10 @@ def main():
 	#runscript("bitcoin")
 	#runscript("bitcoincash")
 	#runscript("dash")
-	#runscript("ethereum")
+	runscript("ethereum")
 	#runscript("monero")
 	#runscript("litecoin")
-	runscript("qtum")
+	#runscript("qtum")
 	#runscript("zcash")
  	
 
@@ -17,10 +17,10 @@ def main():
 	#generate("bitcoin")
 	#generate("bitcoincash")
 	#generate("dash")
-	#generate("ethereum")
+	generate("ethereum")
 	#generate("monero")
 	#generate("litecoin")
-	generate("qtum")
+	#generate("qtum")
 	#generate("zcash")
 	footer()
 
