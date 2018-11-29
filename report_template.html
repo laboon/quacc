@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/png" href="img/quacc_2.png"/>
+</head>
+<body>
+    {% for coin in cryptos %}
+    <div>
+        <h1>{{ coin.display_name }} <img src="img/{{ coin.name }}.png" height=30 width=30> </h1>
+        <a href="{{ coin.url }}">{{ coin.display_name }} Repository</a>
+        <p>Number of Lines of Code: {{ coin.lines_of_code }}</p>
+		<p>Average Cyclomatic Complexity (Uncompiled): {{ coin.uncompiled_cyclomatic_complexity }}</p>
+		<p>Average Cyclomatic Complexity (Compiled): {{ coin.compiled_cyclomatic_complexity }}</p>
+		<a href="{{ coin.name }}/lcov/index.html">Code Coverage Report</a>
+		<p>Time to Run Analysis: {{ coin.runtime }}</p>
+		<p>Number of Errors in Code: {{ coin.num_errors }}</p>
+        <p>Number of Warnings in Code: {{ coin.num_warnings }}</p>
+        {% if coin.errors %}
+        <button class="accordion">Show Errors</button>
+        <div class="panel">
+        {% for error in coin.errors %}<p>{{ error }}</p>{% endfor %}
+        </div>
+        {% endif %}
+
+        {% if coin.warnings %}
+        <button class="accordion">Show Warnings</button>
+        <div class="panel">
+            {% for warning in coin.warnings %}<p>{{ warning }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <br><p>Last Updated: {{ date }}</p>
+	<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+    </script>
+</body>
+</html>

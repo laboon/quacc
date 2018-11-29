@@ -53,5 +53,5 @@ RUN apt-get update && apt-get install -y \
     git \
     software-properties-common
 RUN add-apt-repository ppa:george-edison55/cmake-3.x && apt-get update && apt-get -y upgrade
-RUN pip install lizard
+RUN pip install lizard "django<2"
 CMD cd /app && chmod +x */*.sh && chmod 755 lizardtrim.py && python genhtml.py
