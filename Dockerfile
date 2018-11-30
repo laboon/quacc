@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 COPY . /app
 RUN apt-get update && apt-get install -y \
     cppcheck \
@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y \
     libboost-test-dev \
     libboost-thread-dev \
     libcurl4-openssl-dev \
+    libsodium-dev \
     libdb++-dev \
     libc6-dev \
     libevent-dev \
