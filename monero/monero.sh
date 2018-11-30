@@ -18,10 +18,10 @@ if [ ! -d "${XMR_PATH}/monero" ]; then
 else
   cd monero
    GIT_UPDATE=$(git pull)
-  #if [ "${GIT_UPDATE}" = 'Already up-to-date.' ]; then
-	#echo "No updates since last run, exiting"
-	#exit
-  #fi
+  if [ "${GIT_UPDATE}" = 'Already up-to-date.' ]; then
+	echo "No updates since last run, exiting"
+	exit
+  fi
   cd ..
 fi
 
@@ -47,6 +47,7 @@ echo "Building Monero..."
 # Compile Monero without optimizations
 cd monero
 make debug coverage
+# For some reason, tests start running here. Could it be because of the coverage flag?
 cd ..
 echo "Done building"
 
@@ -88,8 +89,8 @@ lcov --add-tracefile coverageBase.info --add-tracefile coverageTest.info --outpu
 #(before these operations, coverageAll.info contained mostly data about external libraries)
 lcov --extract coverageAll.info *src/* --output-file temp1Coverage.info
 lcov --extract coverageAll.info *tests/* --output-file temp2Coverage.info
-lcov --add-tracefile temp1Coverage.info --add-tracefile temp2Coverage.info --output-file coverageFinal.info
-
+#lcov --add-tracefile temp1Coverage.info --add-tracefile temp2Coverage.info --output-file coverageFinal.info
+lcov --add-tracefile coverageBase.info --output-file coverageFinal.info
 
 # Generate HTML coverage report
 echo "Generating index.html..."
