@@ -40,7 +40,7 @@ echo "Preparing Build of cpp-ethereum Repository"
 cd cpp-ethereum
 mkdir build
 cd build
-cmake ..
+cmake .. -DGUI=0
 
 # Once build files are written, remove CMakeCache.txt in ../ethereum/cpp-ethereum/build and replace it with
 # the version in ../ethereum/ that enables coverage support
@@ -77,7 +77,7 @@ cppcheck -j 750 -q --force --enable=warning cpp-ethereum 2> ethereumcppcheck.txt
 echo "Running lizard on built code"
 lizard cpp-ethereum 1>ethereumlizard.txt
 
-../trimlizard.py ethereumlizard.txt
+../lizardtrim.py ethereumlizard.txt
 
 # Run coverage test
 echo "Running test suite"
