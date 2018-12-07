@@ -10,3 +10,4 @@ docker cp $ID:/app/ethereum/lcov/ ethereum/
 docker cp $ID:/app/monero/lcov/ monero/
 docker cp $ID:/app/litecoin/lcov/ litecoin/
 docker cp $ID:/app/zcash/lcov/ zcash/
+docker cp $ID:/app/bitcoingold/lcov/ bitcoingold/
