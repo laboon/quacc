@@ -3,7 +3,6 @@ COPY . /app
 RUN apt-get update && apt-get install -y \
     cppcheck \
     lcov \
-    cmake \
     autoconf \
     automake \
     autotools-dev \
@@ -48,12 +47,16 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     unzip \
     wget \
-    zlib1g-dev \
-    pkg-config \
-    python3 \
-    python-pip \
-    git \
-    software-properties-common
-RUN add-apt-repository ppa:george-edison55/cmake-3.x && apt-get update && apt-get -y upgrade
+    zlib1g-dev 
+
+RUN cd /usr/local/src \ 
+    && wget https://cmake.org/files/v3.10/cmake-3.10.3.tar.gz \
+    && tar xvf cmake-3.10.3.tar.gz \ 
+    && cd cmake-3.10.3 \
+    && ./bootstrap \
+    && make \
+    && make install \
+    && cd .. \
+    && rm -rf cmake*
 RUN pip install lizard "django<2"
 CMD cd /app && chmod +x */*.sh && chmod 755 lizardtrim.py && python genhtml.py
