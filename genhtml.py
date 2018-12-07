@@ -7,14 +7,14 @@ from django.template import Template, Context
 from django.template.loader import render_to_string
 
 def main():
-	runscript("bitcoin")
-	runscript("bitcoincash")
-	runscript("dash")
-	#runscript("ethereum")
-	runscript("monero")
-	runscript("litecoin")
+	#runscript("bitcoin")
+	#runscript("bitcoincash")
+	#runscript("dash")
+	runscript("ethereum")
+	#runscript("monero")
+	#runscript("litecoin")
 	#runscript("qtum")
-	runscript("zcash")
+	#runscript("zcash")
  	
 	TEMPLATES = [
 		{
@@ -29,14 +29,14 @@ def main():
 		"cryptos": []
 	}
 
-	options["cryptos"].append(generate("bitcoin"))
-	options["cryptos"].append(generate("bitcoincash"))
-	options["cryptos"].append(generate("dash"))
-	#options["cryptos"].append(generate("ethereum"))
-	options["cryptos"].append(generate("monero"))
-	options["cryptos"].append(generate("litecoin"))
+	#options["cryptos"].append(generate("bitcoin"))
+	#options["cryptos"].append(generate("bitcoincash"))
+	#options["cryptos"].append(generate("dash"))
+	options["cryptos"].append(generate("ethereum"))
+	#options["cryptos"].append(generate("monero"))
+	#options["cryptos"].append(generate("litecoin"))
 	#options["cryptos"].append(generate("qtum"))
-	options["cryptos"].append(generate("zcash"))
+	#options["cryptos"].append(generate("zcash"))
 
 	content = render_to_string('report_template.html', options)
 	report = open("report.html", "w+")
