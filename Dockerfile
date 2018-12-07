@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     libboost-test-dev \
     libboost-thread-dev \
     libcurl4-openssl-dev \
+    libsodium-dev \
     libdb++-dev \
     libc6-dev \
     libevent-dev \
@@ -28,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     libleveldb-dev \
     libminiupnpc-dev \
     libreadline-dev \
+    libsodium-dev \
     libssl-dev \
     libtool \
     libunbound-dev \

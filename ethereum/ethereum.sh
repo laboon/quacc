@@ -40,7 +40,7 @@ echo "Preparing Build of cpp-ethereum Repository"
 cd cpp-ethereum
 mkdir build
 cd build
-cmake .. -DGUI=0
+cmake .. -DGUI=0 #DGUI=0 may be disabled
 
 # Once build files are written, remove CMakeCache.txt in ../ethereum/cpp-ethereum/build and replace it with
 # the version in ../ethereum/ that enables coverage support
@@ -60,6 +60,7 @@ cp CMakeCache.txt cpp-ethereum/build
 echo "Building cpp-ethereum"
 cd cpp-ethereum
 cd build
+# --enable-testing --ctest_coverage
 cmake --build .
 echo "Build complete"
 

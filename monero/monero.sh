@@ -38,15 +38,15 @@ cppcheck -j 750 -q --force --enable=warning monero/src 2>monerocppcheck.txt
 
 # Here I am replacing the downloaded copy of the top-level CMakeLists.txt
 # with my own local version that has the appropriate flags set to support lcov
-cd monero
-rm CMakeLists.txt
-cd ..
-cp CMakeLists.txt monero
+#cd monero
+#rm CMakeLists.txt
+#cd ..
+#cp CMakeLists.txt monero
 
 echo "Building Monero..."
 # Compile Monero without optimizations
 cd monero
-make debug
+make debug coverage
 cd ..
 echo "Done building"
 
